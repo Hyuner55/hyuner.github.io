@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="icon" href="images/tree.png">
+	<title>Галерия</title>
+</head>
+<body>
+	<div class="container">
+        <div class="menu">
+        <div class="menu-items">
+            <div class="menu-logo">
+                <a href="index.html" title="Начална Страница">
+                <img src="images/tree.png" alt="logo"></div>
+                <ul class="nav">
+                    <li class="nav-items">
+                        <a href="site-zanas.html" class="text">За нас</a></li>
+                            <li class="nav-items">
+                                <a href="site-deynosti.html" class="text">Дейности</a></li>
+                                    <li class="nav-items">
+                                        <a href="site-novini.html" class="text">Новини</a></li>
+                                            <li class="nav-items">
+                                                <a href="site-galeria.html" class="text">Галерия</a></li>
+                                                    <li class="nav-items">
+                                                <a href="site-kontakti.html" class="text">Контакти</a></li>
+                                                <li class="nav-items">
+                                                <a href="site-vhod.html" class="text">Вход</a></li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+
+
+                                            
+ <section class="news-section">
+
+    <h2 style="color: green">Новини</h2>
+
+    <div class="news-slider">
+        <button class="arrow left" onclick="prevNews()">&#10094;</button>
+
+        <div class="news-container">
+            <div class="news-item active">
+                <h3>Успешна акция по засаждане</h3>
+                <p>
+                    На 15 март нашият екип и доброволци засадиха над 120 млади дръвчета
+                    в района на кв. Аспарухово. Благодарим на всички участници!
+                </p>
+            </div>
+
+            <div class="news-item">
+                <h3>Предстояща акция – включи се!</h3>
+                <p>
+                    Каним всички желаещи на 22 април да се включат в засаждане на дръвчета
+                    в Морската градина. Начало: 10:00 ч.
+                </p>
+            </div>
+
+            <div class="news-item">
+                <h3>Защо дръвчетата са важни?</h3>
+                <p>
+                    Дръвчетата подобряват качеството на въздуха, намаляват шума
+                    и създават по-здравословна среда за живот.
+                </p>
+            </div>
+
+            <div class="news-item">
+                <h3>Благодарим на доброволците</h3>
+                <p>
+                    Благодарим на всички доброволци и партньори,
+                    които подкрепят нашата кауза за по-зелена България.
+                </p>
+            </div>
+        </div>
+
+        <button class="arrow right" onclick="nextNews()">&#10095;</button>
+    </div>
+</section>
+
+
+
+
+
+                                                
+    <div class="footer">
+        <div class="register">
+            <ul class="footer-list">
+                <li class="nav-items">
+                 <a href="site-vhod.html" class="text">Регистрирай се!</a></li>
+             </ul>
+         </div>
+
+         <div class="social-media">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" style="font-size: 40px; margin-right:10px; color:green;" ></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="font-size: 40px;margin-right:10px; color: green;" ></i></a>
+                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube" style="font-size: 40px;margin-right: 20px; color:green"></i></a>
+     </div>
+
+     <div class="contact-us">
+        <div class="contact-title">Контакт с нас</div>
+        <div class="adress">
+            <i class="fa-solid fa-location-dot" style="color:green; margin-right:5px" ></i>
+                <span>гр. Варна, България</span>
+            </div>
+            <div class="email">
+                <i class="fa-solid fa-envelope" style="color:green;margin-right:5px"></i>
+                <span>druvchetabg@gmail.com</span>
+            </div>
+             <div class="telefon">
+                <i class="fa-solid fa-mobile-screen" style="color:green;margin-right:5px"></i>
+                <span>+359 887 1611654</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentIndex = 0;
+const newsItems = document.querySelectorAll(".news-item");
+
+function showNews(index) {
+    newsItems.forEach(item => item.classList.remove("active"));
+    newsItems[index].classList.add("active");
+}
+
+function nextNews() {
+    currentIndex = (currentIndex + 1) % newsItems.length;
+    showNews(currentIndex);
+}
+
+function prevNews() {
+    currentIndex = (currentIndex - 1 + newsItems.length) % newsItems.length;
+    showNews(currentIndex);
+}
+</script>
